@@ -1,9 +1,9 @@
 {
   "name": "my-first-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "day3.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node day3.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

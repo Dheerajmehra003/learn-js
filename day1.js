@@ -40,5 +40,25 @@
 // let string="siafasrfwoerrfpokrpo sjdfoasir i"
 // let length = string.length;
 // console.log("the length of the given string is ",length)
-let text= "we are the so called \"vikings\"from the world";
-console.log(text)
+// let text= "we are the so called \"vikings\"from the world";
+// console.log(text)
+// let a="4"
+// let b=5
+// let c =console.log(a+b)
+// console.log( typeof c)
+// let a = "dheeraj"
+// let b = 3
+// console.log(a+b)
+// console.log(typeof (a+b))
+// const a1= {
+//     name:"dheeraj",
+//     rollno:5,
+
+// }
+// a1['friend']="mehra"
+// console.log(a1)
+const dict={
+    hello:"world",
+    good:"bye"
+}
+console.log(dict.hello)

@@ -201,8 +201,8 @@
 //  a.push(23)
 //  console.log(a)
 
-let a =[10,2,4,5]
- let b =a.shift()
- console.log(a,b)
- a.unshift(23)
- console.log(a)
+// let a =[10,2,4,5]
+//  let b =a.shift()
+//  console.log(a,b)
+//  a.unshift(23)
+//  console.log(a)
