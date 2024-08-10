@@ -62,3 +62,17 @@ const dict={
     good:"bye"
 }
 console.log(dict.hello)
+// {
+//     "name": "my-first-project",
+//     "version": "1.0.0",
+//     "main": "day4.js",
+//      here was debug
+//     "scripts": {
+//       "start": "node day4.js",
+//       "test": "echo \"Error: no test specified\" && exit 1"
+//     },
+//     "author": "",
+//     "license": "ISC",
+//     "description": ""
+//   }
+  

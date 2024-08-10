@@ -67,14 +67,34 @@
 //      return p1*p2
 // })
 // console.log(b)
-alert("hello this is javascipt ")
-let a =prompt("enter a number","234")
-a=Number.parseInt(a)
-alert("the number you enter is a " + (typeof a))
-let write= confirm("do you want it to write on the page")
-if(write){
-    document.write(a)
-}
-else{
-    document.write("please allow me to write the number")
-}
+// alert("hello this is javascipt ")
+// let a =prompt("enter a number","234")
+// a=Number.parseInt(a)
+// alert("the number you enter is a " + (typeof a))
+// let write= confirm("do you want it to write on the page")
+// if(write){
+//     document.write(a)
+// }
+// else{
+//     document.write("please allow me to write the number")
+// }
+//  person={
+//      name:"dheeraj",
+//      age:34,
+//      course:"bca"
+// }
+// console.log("the length of the object", Object.keys(person).length)
+// let a = (input_array) => {
+//     input_array = input_array.sort((a, b) => a - b);
+//     let duplicate_elements = []
+//     for (index in input_array) {
+//         if (input_array[index] ===
+//             input_array[index - 1]) {
+//             duplicate_elements.push(
+//                 input_array[index]);
+//         }
+//     }
+//     return [...new Set(duplicate_elements)];
+// }
+// let arr = [1, 1, 2, 2, 3, 3, 4, 5, 6, 1];
+// console.log(a(arr));
