@@ -164,36 +164,95 @@ const cart = ['kurta', 'pajama', 'shirt']
 //     console.log(error.message)
 // })
 
-getCartData(cart)
-.then((orderId) => console.log(orderId))
-.then((orderId) => proceedToPayment(orderId))
-.then((paymentInfo) => console.log(paymentInfo))
-.catch((error) => console.log(error.message))
+// getCartData(cart)
+// .then((orderId) => console.log(orderId))
+// .then((orderId) => proceedToPayment(orderId))
+// .then((paymentInfo) => console.log(paymentInfo))
+// .then((paymentInfo) => showOrderSummary(paymentInfo) )
+// .then((orderSummary) => console.log(orderSummary))
+// .then((orderSummary) => updateWallet(orderSummary))
+// .then((walletMessage) => console.log(walletMessage))
+// .catch((error) => console.log(error.message))
 
 
-function getCartData(cart) {
 
-    const pr = new Promise(function(resolve, reject) {
-        if(valitdateCart(cart)) {
-            const err = new Error("there is an error")
-            reject(err)
-        }
-        const orderId = '12345'
-        if(orderId) {
-            resolve(orderId)
-        }
-    })
+// function getCartData(cart) {
+
+//     const pr = new Promise(function(resolve, reject) {
+//         if(valitdateCart(cart)) {
+//             const err = new Error("there is an error")
+//             reject(err)
+//         }
+//         const orderId = '12345'
+//         if(orderId) {
+//             resolve(orderId)
+//         }
+//     })
     
-    return pr;
-}
+//     return pr;
+// }
 
-function valitdateCart(cart) {
-    return false
-}
+// function valitdateCart(cart) {
+//     return false
+// }
 
-function proceedToPayment(orderId) {
-    return new Promise( function(reslove, reject) {
-        reslove('payment was successful')
-    })
-}
+// function proceedToPayment(orderId) {
+//     return new Promise( function(reslove, reject) {
+//         reslove('payment was successful')
+//     })
+// }
+
+// function showOrderSummary(paymentInfo) {
+//     return new Promise(function(reslove, reject){
+//         reslove('here is the order summary')
+//     })
+// }
+
+// function updateWallet(orderSummary) {
+//     return new Promise(function(reslove, reject){
+//         reslove('the wallet is updated')
+//     })
+// }
+
+// ------Promise methods --------
+
+const p1 = new Promise(function(reslove, reject){
+    // setTimeout(() => reslove('p1 is successful'), 2000)
+    setTimeout(() => reject('p1 failed'),2000)
+})
+const p2 = new Promise(function(reslove, reject){
+    // setTimeout(() => reslove('p2 is successful'), 5000)
+    setTimeout(() => reject('p2 failed'), 5000)
+})
+const p3 = new Promise(function(reslove, reject){
+    // setTimeout(() => reslove('p3 is successful'), 1000)
+    setTimeout(() => reject('p3 failed'), 1000)
+})
+
+//--------Promise APIs-------
+
+Promise.all([p1, p2, p3]) 
+.then((res) => {console.log(res)})
+.catch((error) => {console.error(error)})
+
+//----Promise all settled------
+
+Promise.allSettled([p1, p2, p3])
+.then((res) => {console.log(res)})
+.catch((error) => {console.error(error)})
+
+//------Promise race--------
+Promise.race([p1, p2, p3])
+.then((res) => {console.log(res)})
+.catch((error) => {console.error(error)})
+
+//------Promise any---------
+Promise.any([p1, p2, p3])
+.then((res) => {console.log(res)})
+.catch((error) =>
+     {console.error(error);
+      console.log(error.errors)
+     }
+    )
+
 
