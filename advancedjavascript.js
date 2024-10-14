@@ -143,7 +143,7 @@
 
 //    ------Promises---
 
-const cart = ['kurta', 'pajama', 'shirt']
+// const cart = ['kurta', 'pajama', 'shirt']
 
 
 // const promise = getCartData(cart)
@@ -214,45 +214,63 @@ const cart = ['kurta', 'pajama', 'shirt']
 //     })
 // }
 
-// ------Promise methods --------
+// ------Promise APIs --------
 
-const p1 = new Promise(function(reslove, reject){
-    // setTimeout(() => reslove('p1 is successful'), 2000)
-    setTimeout(() => reject('p1 failed'),2000)
-})
-const p2 = new Promise(function(reslove, reject){
-    // setTimeout(() => reslove('p2 is successful'), 5000)
-    setTimeout(() => reject('p2 failed'), 5000)
-})
-const p3 = new Promise(function(reslove, reject){
-    // setTimeout(() => reslove('p3 is successful'), 1000)
-    setTimeout(() => reject('p3 failed'), 1000)
-})
+// Promise is an object that represents the eventual completion of an async operation
 
-//--------Promise APIs-------
+// const p1 = new Promise(function(reslove, reject){
+//     setTimeout(() => reslove('p1 is successful'), 2000)
+//     setTimeout(() => reject('p1 failed'),2000)
+// })
+// const p2 = new Promise(function(reslove, reject){
+//     setTimeout(() => reslove('p2 is successful'), 5000)
+//     setTimeout(() => reject('p2 failed'), 5000)
+// })
+// const p3 = new Promise(function(reslove, reject){
+//     setTimeout(() => reslove('p3 is successful'), 1000)
+//     setTimeout(() => reject('p3 failed'), 1000)
+// })
 
-Promise.all([p1, p2, p3]) 
-.then((res) => {console.log(res)})
-.catch((error) => {console.error(error)})
+//--------Promise all-------
+
+// Promise.all([p1, p2, p3]) 
+// .then((res) => {console.log(res)})
+// .catch((error) => {console.error(error)})
 
 //----Promise all settled------
 
-Promise.allSettled([p1, p2, p3])
-.then((res) => {console.log(res)})
-.catch((error) => {console.error(error)})
+// Promise.allSettled([p1, p2, p3])
+// .then((res) => {console.log(res)})
+// .catch((error) => {console.error(error)})
 
 //------Promise race--------
-Promise.race([p1, p2, p3])
-.then((res) => {console.log(res)})
-.catch((error) => {console.error(error)})
+// Promise.race([p1, p2, p3])
+// .then((res) => {console.log(res)})
+// .catch((error) => {console.error(error)})
 
 //------Promise any---------
-Promise.any([p1, p2, p3])
-.then((res) => {console.log(res)})
-.catch((error) =>
-     {console.error(error);
-      console.log(error.errors)
-     }
-    )
+// Promise.any([p1, p2, p3])
+// .then((res) => {console.log(res)})
+// .catch((error) =>
+//      {console.error(error);
+//       console.log(error.errors)
+//      }
+//     )
+
+const p = new Promise(function(reslove, reject) {
+    // reslove('promise is successful')
+    reject('promise is failed')
+})
+
+async function handlePromise() {
+    try {
+        const val = await p;
+        console.log(val)
+    } catch (error) {
+       console.log(error) 
+    }
+ 
+}
+handlePromise();
 
 
