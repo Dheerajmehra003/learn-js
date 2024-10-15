@@ -139,7 +139,7 @@
 // console.log(age)
 // console.log(typeof(users))
 // console.log(typeof(sum))
-// console.log(findFirstname
+// console.log(findFirstname)
 
 //    ------Promises---
 
@@ -276,56 +276,89 @@
 // -------This keyword ------------
 
 //this keyword in global scope  shows window object
-console.log(this)
+// console.log(this)
 
-// this keyword value in function depends on strict or non-strict mode in strict mode the value is undefined 
-// but in non-strict mode the value of this is window object
-// this code is in non-strict mode
-console.log(this)
+// // this keyword value in function depends on strict or non-strict mode in strict mode the value is undefined 
+// // but in non-strict mode the value of this is window object
+// // this code is in non-strict mode
+// console.log(this)
 
-// this in object method
-const demoObject = {
-    name: 'Dheeraj',
-    age: 34,
-    printName: function () {
-        console.log(this)
-        // console.log(this.name)
-    }
-}
-demoObject.printName()
+// // this in object method
+// const demoObject = {
+//     name: 'Dheeraj',
+//     age: 34,
+//     printName: function () {
+//         console.log(this)
+//         // console.log(this.name)
+//     }
+// }
+// demoObject.printName()
 
-const demoObject2 = {
-    name: 'rohit',
-    age: 45,
-}
+// const demoObject2 = {
+//     name: 'rohit',
+//     age: 45,
+// }
 
-demoObject.printName.call(demoObject2)
+// demoObject.printName.call(demoObject2)
 
-// this keyword in arrow function 
-const student = {
-    name: 'Dheeraj',
-    age: 34,
-    printName: ()=>{
-        console.log(this)
-        // console.log(this.name)
-    }
-}
+// // this keyword in arrow function 
+// const student = {
+//     name: 'Dheeraj',
+//     age: 34,
+//     printName: ()=>{
+//         console.log(this)
+//         // console.log(this.name)
+//     }
+// }
 
-student.printName()
+// student.printName()
 
-// second method to use this in arrow function
-const student2 = {
-    name: 'Dheeraj',
-    age: 34,
-    x: function () {
-        const y = () => {
-        console.log(this)
-        // console.log(this.name)
-    };
-    y();
-    }
-}
-student2.x()
+// // second method to use this in arrow function
+// const student2 = {
+//     name: 'Dheeraj',
+//     age: 34,
+//     x: function () {
+//         const y = () => {
+//         console.log(this)
+//         // console.log(this.name)
+//     };
+//     y();
+//     }
+// }
+// student2.x()
 
 // this keyword in DOM element 
 // used in button element
+
+//-------Call Apply bind -----------------
+
+// function borrowing-call
+// const demoObject = {
+//     name: 'Dheeraj',
+//     age: 34,
+// }
+//  let printName = function (hometown, state) {
+//     console.log(this.name + " from " + hometown + " " + state)
+// }
+// printName.call(demoObject, "Haldwani", "Uttarakhand")
+
+// const demoObject2 = {
+//     name: 'rohit',
+//     age: 45,
+// }
+
+// const demoObject3 = {
+//     name: 'Rahul',
+//     age: 45,
+// }
+
+// printName.call(demoObject2, "Barwala", "Haryana")
+
+// // apply method is same as call it just have to make a array of set of the arguments passed after object name
+// printName.apply(demoObject2, ["Barwala", "Haryana"])
+
+// // bind create a new variable which returns a function where it bind the function and the call then call the variable 
+// let printdemo3 = printName.bind(demoObject3,"mumbai", 'Maharastra')
+// printdemo3();
+
+ document.getElementById("heading").innerText = "Learning dom manipulation"
