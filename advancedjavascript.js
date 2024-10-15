@@ -257,20 +257,75 @@
 //      }
 //     )
 
-const p = new Promise(function(reslove, reject) {
-    // reslove('promise is successful')
-    reject('promise is failed')
-})
+// const p = new Promise(function(reslove, reject) {
+//     // reslove('promise is successful')
+//     reject('promise is failed')
+// })
 
-async function handlePromise() {
-    try {
-        const val = await p;
-        console.log(val)
-    } catch (error) {
-       console.log(error) 
-    }
+// async function handlePromise() {
+//     try {
+//         const val = await p;
+//         console.log(val)
+//     } catch (error) {
+//        console.log(error) 
+//     }
  
+// }
+// handlePromise();
+
+// -------This keyword ------------
+
+//this keyword in global scope  shows window object
+console.log(this)
+
+// this keyword value in function depends on strict or non-strict mode in strict mode the value is undefined 
+// but in non-strict mode the value of this is window object
+// this code is in non-strict mode
+console.log(this)
+
+// this in object method
+const demoObject = {
+    name: 'Dheeraj',
+    age: 34,
+    printName: function () {
+        console.log(this)
+        // console.log(this.name)
+    }
 }
-handlePromise();
+demoObject.printName()
 
+const demoObject2 = {
+    name: 'rohit',
+    age: 45,
+}
 
+demoObject.printName.call(demoObject2)
+
+// this keyword in arrow function 
+const student = {
+    name: 'Dheeraj',
+    age: 34,
+    printName: ()=>{
+        console.log(this)
+        // console.log(this.name)
+    }
+}
+
+student.printName()
+
+// second method to use this in arrow function
+const student2 = {
+    name: 'Dheeraj',
+    age: 34,
+    x: function () {
+        const y = () => {
+        console.log(this)
+        // console.log(this.name)
+    };
+    y();
+    }
+}
+student2.x()
+
+// this keyword in DOM element 
+// used in button element
