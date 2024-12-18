@@ -361,4 +361,39 @@
 // let printdemo3 = printName.bind(demoObject3,"mumbai", 'Maharastra')
 // printdemo3();
 
- document.getElementById("heading").innerText = "Learning dom manipulation"
+//  document.getElementById("heading").innerText = "Learning dom manipulation"
+//  heading.style.backgroundColor = 'red'
+//  heading.style.padding = '10px'
+
+const btn1 = document.querySelector('#button1')
+const btn2 = document.querySelector('#button2')
+const basket1count = document.querySelector('.basket1 span')
+const basket2count = document.querySelector('.basket2 span')
+
+const totalapple = 10
+
+let secondBasketapple = 0
+let firstBasketapple = totalapple - secondBasketapple
+
+basket1count.innerText = firstBasketapple
+basket2count.innerText = secondBasketapple
+
+btn2.addEventListener('click', function() {
+   if(firstBasketapple >0 ){
+       console.log('clicked')
+       firstBasketapple--
+       basket1count.innerText = firstBasketapple
+       secondBasketapple++
+       basket2count.innerText = secondBasketapple
+    }
+})
+
+btn1.addEventListener('click', function() {
+    if(secondBasketapple >0 ){
+        console.log('clicked')
+        firstBasketapple++
+        basket1count.innerText = firstBasketapple
+        secondBasketapple--
+        basket2count.innerText = secondBasketapple
+    }
+})

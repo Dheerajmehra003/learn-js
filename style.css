@@ -221,3 +221,14 @@ button{
   background-color: rgb(180, 90, 221);
   cursor: pointer;
 } */
+
+body{
+  display: flex;
+  gap: 100px;
+  margin: 100px;
+
+}
+.image{
+  height: 100px;
+  width: 100px;
+}
